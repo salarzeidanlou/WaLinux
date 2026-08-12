@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem in WaLinux
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve WaLinux. Remove all personal data from logs and screenshots.
+  - type: input
+    id: version
+    attributes:
+      label: WaLinux version
+      placeholder: v0.1.2 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Linux environment
+      description: Distribution, version, desktop environment, and display server (X11 or Wayland)
+      placeholder: Fedora 42, GNOME 48, Wayland
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+      description: Describe what happened and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start WaLinux
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste sanitized logs. Do not include messages, phone numbers, or session data.
+      render: shell
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed personal and WhatsApp account data.
+          required: true

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "WaLinux",
+  "version": "0.1.2",
+  "identifier": "com.sullivan.walinux",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "WaLinux",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "center": false,
+        "create": false,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "url": "https://web.whatsapp.com",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0",
+        "incognito": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: asset: https://web.whatsapp.com https://static.whatsapp.net; connect-src 'self' ipc: asset: https://web.whatsapp.com wss://web.whatsapp.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://web.whatsapp.com https://static.whatsapp.net; style-src 'self' 'unsafe-inline' https://web.whatsapp.com; img-src 'self' https: data: blob:; media-src 'self' https: data: blob: mediastream:; font-src 'self' data: https://web.whatsapp.com;"
+    },
+    "trayIcon": {
+      "id": "main-tray",
+      "iconPath": "icons/icon.png",
+      "tooltip": "WaLinux"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb", "appimage", "rpm"],
+    "publisher": "Sullivan",
+    "homepage": "https://github.com/salarzeidanlou/WaLinux",
+    "copyright": "Copyright © 2025-2026 Sullivan",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
+    "category": "SocialNetworking",
+    "shortDescription": "Unofficial WhatsApp Web desktop client for Linux",
+    "longDescription": "WaLinux is an unofficial, lightweight WhatsApp Web desktop client built with Tauri and Rust. It adds Linux desktop notifications, a system tray, window state persistence, and categorized downloads.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
