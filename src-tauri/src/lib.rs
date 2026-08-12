@@ -203,7 +203,7 @@ pub fn run() {
             let window_config = app_config
                 .app
                 .windows
-                .get(0)
+                .first()
                 .expect("Window config not found")
                 .clone();
 
@@ -223,8 +223,8 @@ pub fn run() {
                             // For non-blob URLs, set custom download path
                             if let Some(filename) = url
                                 .path_segments()
-                                .and_then(|segments| {
-                                    segments.filter(|segment| !segment.is_empty()).next_back()
+                                .and_then(|mut segments| {
+                                    segments.rfind(|segment| !segment.is_empty())
                                 })
                                 .and_then(|name| sanitize_download_filename(name).ok())
                             {
