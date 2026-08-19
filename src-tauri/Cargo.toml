@@ -30,7 +30,7 @@ tauri-plugin-window-state = "2"
 tauri-plugin-notification = "2"
 tokio = { version = "1", features = ["fs"] }
 dirs = "6.0"
-infer = "0.19"
+infer = "0.22"
 open = "5"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
